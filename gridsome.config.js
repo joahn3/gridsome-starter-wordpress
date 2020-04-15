@@ -1,6 +1,6 @@
 module.exports = {
-  siteName: 'Gridsome',
-  siteDescription: 'A WordPress starter for Gridsome',
+  siteName: 'Chic Roumaine',
+  siteDescription: 'Ii Romanesti Autentice',
 
   templates: {
     WordPressCategory: '/category/:slug', // adds a route for the "category" post type (Optional)
@@ -13,8 +13,13 @@ module.exports = {
       use: '@gridsome/source-wordpress',
       options: {
         baseUrl: process.env.WORDPRESS_URL, // required
+        apiBase: 'wp-json',
         typeName: 'WordPress', // GraphQL schema name (Optional)
+        perPage: 100,
+        concurrent: 10
       }
     }
   ]
 }
+
+
